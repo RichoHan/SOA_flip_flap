@@ -1,6 +1,7 @@
 require_relative 'tsv_buddy'
 require 'yaml'
 
+# Class for tranform data to yaml format
 class FlipFlap
   # Do NOT create an initialize method
   include TsvBuddy
@@ -10,5 +11,6 @@ class FlipFlap
   end
 
   def to_yaml
+    @data.to_yaml
   end
 end
