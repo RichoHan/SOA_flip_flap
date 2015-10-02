@@ -22,6 +22,7 @@ module TsvBuddy
   # returns: String in TSV format
   def to_tsv
     str = ''
+    @data ||= []
     @data.each do |student|
       str << "#{student['date']}\t#{student['student_id']}\t"\
         "#{student['languages']}\t#{student['best_language']}\t"\
