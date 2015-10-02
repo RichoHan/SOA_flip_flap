@@ -7,7 +7,15 @@ module TsvBuddy
   # take_tsv: converts a String with TSV data into @data
   # parameter: tsv - a String in TSV format
   def take_tsv(tsv)
-
+    lines = tsv.split("\n")
+    @data = lines[1..-1].map do |line|
+      items = line.split("\t")
+      {
+        'date' => items[0], 'student_id' => items[1],
+        'languages' => items[2], 'best_language' => items[3],
+        'app_experience' => items[4], 'tech_experience' => items[5]
+      }
+    end
   end
 
   # to_tsv: converts @data into tsv string
